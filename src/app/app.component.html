@@ -16,6 +16,16 @@
     flex: 1;
   }
 
+  #start-header {
+    background: linear-gradient(#fefae9, #cdbfa6);
+    margin-bottom: 8px;
+  }
+
+  #about {
+    width: 100%;
+    background: linear-gradient(45deg, black, white);
+  }
+
   #start-header img,
   #about img {
     width: 100%;
@@ -26,6 +36,11 @@
     display: block;
   }
 
+  #about img {
+    max-width: 400px;
+    max-height: 400px;
+  }
+
   .toolbar {
     height: 60px;
     margin: -8px;
@@ -34,6 +49,7 @@
     background-color: black;
     color: white;
     font-weight: 600;
+    z-index: 1;
   }
 
   .toolbar .menu-link {
@@ -67,6 +83,16 @@
     margin-bottom: 50px;
   }
 
+  div#about p {
+    background: white;
+    height: 100%;
+    margin: 50px 50px 0px 50px;
+    border-radius: 20px;
+    padding: 20px;
+    opacity: .9;
+    z-index: 0;
+    font-size: large;
+  }
 
   svg.material-icons {
     height: 24px;
@@ -295,8 +321,27 @@
       visibility: hidden;
     }
   }
-</style>
 
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+</style>
+<!-- <script>
+  window.onscroll = function() {myFunction()};
+  
+  var header = document.getElementById("menu");
+  var sticky = header.offsetTop;
+  
+  function myFunction() {
+    if (window.pageYOffset > sticky) {
+      header.classList.add("sticky");
+    } else {
+      header.classList.remove("sticky");
+    }
+  }
+  </script> -->
 <!-- 
   spotify: https://open.spotify.com/artist/5hZaBQ8ZT0lezPvu3Yzb5w
   facebook: https://www.facebook.com/lizahessmusic/
@@ -310,33 +355,39 @@
 
 <!-- Toolbar -->
 
-<div id="start-header">
+<div id="start-header" style="padding-bottom: 70px;">
   <img src="assets/images/header.jpg"/>
 </div>
 
-<!-- <div class="toolbar" role="banner">
+<div id="menu" class="toolbar sticky" role="banner">
   <span style="padding-left: 20px; ">LIZA HESS MUSIC</span>
     <div class="spacer"></div>
   <div id="menu-link-block">
-    <a class="menu-link"><span>New</span></a>
-    <a class="menu-link"><span>Listen</span></a>
-    <a class="menu-link"><span>Buy</span></a>
-    <a class="menu-link"><span>About</span></a>
+    <a href="#new" class="menu-link"><span>New</span></a>
+    <!-- <a href="#listen" class="menu-link"><span>Listen</span></a>
+    <a href="#buy" class="menu-link"><span>Buy</span></a> -->
+    <a href="#about" class="menu-link"><span>About</span></a>
   </div>
-</div> -->
+</div>
+
+
 <div class="content" role="main">
-  <div id="new">
-    <h1 style="font-family:fantasy; text-align: center; margin-top: 30px; margin-bottom: 30px">New Single Coming Soon!</h1>
-    <img src="assets/images/cute-single-cover.jpeg" height="400px" />
-  </div>
   <!-- <div id="listen" style="width: 100%; background: black;">
     <h1 style="font-family:fantasy; color: white; text-align: center; margin-top: 30px; margin-bottom: 30px">This is It!</h1>
-  </div>
-  <div id="about">
-    <img src="assets/images/blacknwhite.jpg" />
   </div> -->
+  <div id="new">
+    <h1 style="font-family:fantasy; text-align: center; margin-top: 30px; margin-bottom: 30px">Check out the New Single!</h1>
+    <img src="assets/images/cute-single-cover.jpeg" height="400px" />
 
+  </div>
 </div>
+    <div id="about" style="padding-bottom: 70px; padding-top: 70px;">
+      <img src="assets/images/blacknwhite.jpg" />
+      <p style="background: white;"> A singer-songwriter currently living in Los Angeles, California. 
+        In the early 2000’s, while listening to the Dixie Chicks in the car, three little voices ages 8 and 6 were singing along to "Ready to Run". Of all these little voices, one stood out amongst the rest. Wailing her little heart out, Liza Hess' vocal talent was
+        discovered! After begging for guitar lessons, her parents amused the idea of a 10 year old starting what is now her passion. Drawing musical styles from Sara Barellies, Norah Jones, Colbie Callait, Chelsea Williams, Florence and the Machine, and Bon Iver, Liza
+        Hess has created a unique sound that sends listeners on an unforgettable adventure.</p>
+    </div>
 <div class="toolbar" role="banner">
   <div style="display: block; margin-left: auto; margin-right: auto; width: 60%; text-align: center;">
     <a href="https://open.spotify.com/artist/5hZaBQ8ZT0lezPvu3Yzb5w"><img src="assets/images/icons/spotify-logo.png" height="50px"/></a>
